@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonus</title>
+  </head>
+
+  <body>
+
+    <label for="texto">Escribe algo:</label>
+    <input type="text" id="texto" />
+
+    <p id="resultado"></p>
+
+    <button id="boton" class="btn">Evaluar Palabra</button>
+
+    <script>
+      const input = document.querySelector("#texto");
+      const boton = document.querySelector("#boton");
+      const resultadoT = document.querySelector("#resultado");
+
+      boton.addEventListener("click", function () {
+        // Código para convertir el texto a mayúsculas y mostrarlo en el párrafo
+        let texto = input.value;
+        let palabra = "";
+
+        for (let index = texto.length - 1; index >= 0; index--) {
+          palabra = palabra + texto[index];
+        }
+
+        if (palabra === texto) {
+          texto = "Es palindroma";
+        } else {
+          texto = "No es palindroma";
+        }
+
+        resultadoT.textContent = texto;
+      });
+    </script>
+
+  </body>
+
+</html>

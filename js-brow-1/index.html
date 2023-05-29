@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayúsculas</title>
+  </head>
+
+  <body>
+    <label for="texto">Escribe algo:</label>
+    <input type="text" id="texto" />
+
+    <p id="resultadoT"></p>
+   
+    <button id="boton" class="btn">Convertir mensaje a mayusculas</button>
+
+    <!-- aca va el resultado tal cual se escribe -->
+    <p id="resultado"></p>
+    <!-- aca va el resultado en mayusculas -->
+	<p id="resultadoMayusculas"></p>
+
+
+    <script>
+        const input = document.querySelector('#texto');
+        const resultadoT = document.querySelector('#resultadoT');
+        const boton = document.querySelector('#boton')
+
+        //****** Qué otras alternativas para seleccionar el input y el párrafo existen?
+        //****** Con querySelector, puede seleccionar un elemento basado en un selector de CSS
+        //****** Con querySelectorAll retorna todos los elementos que coinciden, por ejemplo todos los divs
+
+        input.addEventListener('input', function() {
+            // Código para convertir el texto a mayúsculas y mostrarlo en el párrafo
+            const texto = input.value.toUpperCase();
+            resultadoT.textContent = texto;
+            }); 
+        
+        boton.addEventListener('click', function() {
+            // Código para convertir el texto a mayúsculas y mostrarlo en el párrafo desde el Button            
+
+            alert("El botón convierte ei input a Mayuscula: "+ input.value.toUpperCase());
+           
+            
+            });        
+                
+    </script>
+
+  </body>
+</html>
